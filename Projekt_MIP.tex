@@ -43,7 +43,7 @@ V našej práci chceme zistiť dôvod, pre ktorý ešte stále nenahradili agiln
 V prvej časti článku sa venujem agilnému\ref{Agilne} vývoju ako takému. Dozvieme sa tu, čo to agilný vývoj vlastne je, jeho výhody a nevýhody, prečo boli vyvinuté a načo sa používajú. 
 V druhej časti článku sa venujem extrémnemu programovaniu\ref{XP}. Povieme si o jeho praktikách, výhodách a nevýhodách. 
 V tretej časti článku si priblížime metódu vodopádového vývoja\ref{vodopad}. 
-Vo štvrtej časti článku si povieme o iteratívnom a inkrementálnom vývoji\ref{iteratívny}, o ich plusoch a mínusoch. 
+Vo štvrtej časti článku si povieme o špirálovom vývoji\ref{spiral}, o ich plusoch a mínusoch. 
 V piatej časti článku sa dozvieme niečo o RAD vývoji\ref{RAD}. 
 V poslednej – šiestej časti článku sa venujeme rozdielom medzi jednotlivými metódami\ref{porovnávanie} a porovnávame ich výhody a nevýhody. 
 Cieľom práce je zistiť či sú agilné metódy vhodné na nahradenie všetkých zvyšných procesov. Predstavíme si tieto základné metodiky, popíšeme si ich základné informácie, vymenujeme výhody a nevýhody z pohľadu na flexibilitu, časovej náročnosti a robustnosti. V každej časti článku poukážeme na prípady softvéru, pre ktoré sú jednotlivé metódy vhodné a nevhodné a oddôvodnime si ich. V závere\ref{zaver} odpovieme na otázku či môžu nahradiť agilné metódy tradičné vývojové metódy. 
@@ -52,24 +52,13 @@ Cieľom práce je zistiť či sú agilné metódy vhodné na nahradenie všetký
 
 \section{Agilné vývojové metódy}\label{Agilne}
 Agilné vývojové metódy, sú všetky metódy, ktoré používajú iteratívny a prírastkový vývoj a riadia sa podľa hodnôt a princípov agilného vývojového manifesta ktoré vzniklo v roku 2001. Autormi Agilného vývojového manifesta boli zástupcovia Extrémneho programovania, SCRUM, DSDM, Adaptive Software development, Crystal Feature driven development, Pragmatic Programming, ktorí chceli vytvoriť alternatívu k dovtedy používaním metódam\cite{Agile}, ktoré mali rigidný postup na základe dokumentácie, ako napríklad vodopádová metóda, pri ktorej ak sa vyskytla chyba v kóde pri testovaní, musel sa prerobiť celý kód. Agilné metódy sa snažili týmto nedostatkom predísť neustálou iteráciou kódu a, ako už sme si povedali agilné metódy sa riadia podľa agilného manifesta, ktoré je založené na 12-tích princípoch a 4 hodnotách, ktoré si teraz rozoberieme.
-
-Princípy Agilného manifesta
-\begin{enumerate}
-\item Naša najväčšia prioroita je spokojnosť klienta prostredníctvom skorého a  nepretržitého doručovania cenného softvéru.
-\item Vitajte menicae sa požiadavky, dokonca aj neskoro vo vývoji. Agilné procesy využívajú ymenu pre konkurenčnú výhodu zákazníka.
-\item často dodávajte fungujúci softvér, od pár týždňov až pár mesiacov, s preferenciou ku kratšiemu časovému rámcu.
-\item Podnikatelia a vývojári musia medzi sebou na projekte denne pracovať.
-\item Budujte projekty okolo motivovaných jedincov. Dajte im prostredie a podporu, ktorú potrebujú a verte im, že prácu zvládnu.
-\item Najefektívnejším spôsobom predávania informácii v developerskom tíme je osobný rozhovor.
-\item fungujúci softvér je hlavným merdlom progresu.
-\item Agilne procesy podporujú trvalo udržateľný rozvoj. Investori, vývojári a používatelia by mali byť schopní udržať konštantné tempo na neurčitú dobu.
-\item Neustála pozornosť k technickej dokonalosti a dobrý dizajn zvyšuje agilitu.
-\item jednoduchosť – umenie maximalizovať množstvo práce, ktorá nie je urobená je  nevyhnutná.
-\item Najlepšie architektúry, požiadavky a návrhy vznikajú zo samo organizovaných tímov.
-\item V pravidelných intervalov, tím reflektuje, ako sa stať efektívnejším a potom spôsobiť svoje správanie.\cite{Agile_principles}
-\end {enumerate}
-
-Hodnoty Agilného manifesta
+\\
+\\
+\textbf{Princípy Agilného manifesta}
+\cite{Agile_principles}
+\\
+\\
+\textbf{Hodnoty Agilného manifesta}
 \begin{enumerate}
 \item Ľudia a komunikácia sú viac než procesy a nástroje.
 \item Funkčný softvér je viac než vyčerpávajúca dokumentácia.
@@ -77,26 +66,15 @@ Hodnoty Agilného manifesta
 \item Radšej reagovať na zmenu než sa držať plánu.\cite{Agile_Values}
 \end{enumerate}
 
-Podľa týchto hodnôt vieme povedať, že agilné metódy oproti tradičným metódam, ako je napríklad vodopádová metóda sa namiesto dokumentácie zameriava hlavne na priamu komunikáciu medzi všetkými zainteresovanými osobami v projekte a, že preferuje fungujúci softvér namiesto presnej dokumentácii, čo ma samo o sebe pár výhod, ako je napríklad to, že klient má prístup k rôznym verziám softvéru, ktoré môže on sám testovať a na základe týchto verzií nám počas vývoja môže povedať, že chce niečo pozmeniť alebo prišiel na nejakú novú funkciu, ktorú by sme mohli pridať a nám nerobí problém sa prispôsobiť jeho novým požiadavkám a pridať ich do ďalšej iterácie, čo nám šetrí čas a peniaze oproti tomu, ako by sme s klientom nekomunikovali počas celého vývojového procesu a na koniec by sme mu doručili softvér, ktorý nespĺňa úplne jeho požiadavky a museli ho prerobiť od základov, alebo v najhoršiom prípade by sme prišli o celú zákazku. Ďalej je tu priama komunikácia medzi vývojovými tímami, ktorej hlavná výhoda je, že si vedia pri priamej komunikácii efektívnejšie predať informácie medzi sebou a tým pádom zefektívnia svoju prácu. Bohužiaľ žiadna metóda nie je perfektná a agilné metódy majú aj svoje nevýhody. To, že preferujeme funkčný softvér namiesto dokumentácie je samo o sebe fajn, ale bez podrobnej dokumentácie nepoznáme konečný výsledok našej práce od 1. dňa a nevieme presne vyhradiť potrebné financie a koľko bude daný projekt trvať. Ďalej sa môžeme stratiť v neustálom pridávaní nových funkcionalít do programu, čím neustále zväčšujeme množstvo času a financií potrebných na vydanie finálnej verzie. 
+Podľa týchto hodnôt vieme povedať, že agilné metódy oproti tradičným metódam, ako je napríklad vodopádová metóda sa namiesto dokumentácie zameriava hlavne na priamu komunikáciu medzi všetkými zainteresovanými osobami v projekte a, že preferuje fungujúci softvér namiesto presnej dokumentácii, čo ma samo o sebe pár výhod, ako je napríklad to, že klient má prístup k rôznym verziám softvéru, ktoré môže on sám testovať a na základe týchto verzií nám počas vývoja môže povedať, že chce niečo pozmeniť alebo prišiel na nejakú novú funkciu, ktorú by sme mohli pridať a nám nerobí problém sa prispôsobiť jeho novým požiadavkám a pridať ich do ďalšej iterácie, čo nám šetrí čas a peniaze oproti tomu, ako by sme s klientom nekomunikovali počas celého vývojového procesu a na koniec by sme mu doručili softvér, ktorý nespĺňa úplne jeho požiadavky a museli ho prerobiť od základov, alebo v najhoršiom prípade by sme prišli o celú zákazku. Ďalej je tu priama komunikácia medzi vývojovými tímami, ktorej hlavná výhoda je, že si vedia pri priamej komunikácii efektívnejšie predať informácie medzi sebou a tým pádom zefektívnia svoju prácu. Bohužiaľ žiadna metóda nie je perfektná a agilné metódy majú aj svoje nevýhody. To, že preferujeme funkčný softvér namiesto dokumentácie je samo o sebe fajn, ale bez podrobnej dokumentácie nepoznáme konečný výsledok našej práce od 1. dňa a nevieme presne vyhradiť potrebné financie a koľko bude daný projekt trvať. Ďalej sa môžeme stratiť v neustálom pridávaní nových funkcionalít do programu, čím neustále zväčšujeme množstvo času a financií potrebných na vydanie finálnej verzie.
+
 
 \subsection{Extrémne programovanie}\label{XP}
 Extrémne programovanie alebo XP je ľahká agilná metóda, navrhnutá pre malé až stredne veľké projekty, pri ktorých sa očakáva, že sa bude kód často meniť. Zástancovia XP tvrdia, že zlepšuje kvalitu softvéru, zvyšuje produktivitu, znižuje náklady, je efektívny a nízko rizikový. Zameriava sa na rýchle cykly vydávania softvéru a nepretržitú komunikáciu s klientom, je založené na 12 praktikách, ktoré sa musia dodržiavať \cite{1008537}.
 
-Praktiky Extremného programovania
-\begin{enumerate}
-\item Plánovacia hra -  podporuje klienta, aby definoval funkcie aplikácie pomocou používateľských príbehov, ktoré sú podobné prípadom použitia. Vývojári potom prioritizujú príbehy a naplánujú tie najdôležitejšie na ďalšiu iteráciu.
-\item Metafora XP - vedie celý vývoj jednoduchým zdieľaným príbehom o tom, ako celý systém funguje a vyjadruje rozvíjajúcu sa víziu projektu, ktorá definuje rozsah a účel systému
-\item Malé vydania - Zabezpečujú, že vývojári použijú len tie najhodnotnejšie požiadavky na stavbu systému. K vydaniam dochádza každé dva až tri týždne, pričom zákazníci musia byť schopný systém používať a ohodnotiť ho počas projektu, aby sa ujistili, že vývojári odpovedajú na všetky požiadavky.
-\item Jednoduchý dizajn -  pomáha tímu dodávať systém, ktorý spĺňa potreby zákazníka nič viac, nič menej. XP podporuje písať komponenty s, čo najmenším počtom tried a metód. Pričom implementujjú  len funkčné vlastnosti(črty), ktoré opísal zákazník v príbehu.
-\item Testy jednotiek - používajú sa na overenie správnej činnosti modulov predtým, ako napíšu funkčný kód pre daný modul. Testy jednotiek musia bežať bezchybne, aby vývoj mohol pokračovať. Klienti potom píšu systémové testy, aby predviedli, že kód spĺňa požiadavky.
-\item Refaktoring -  proces reštrukturalizácie systému s cieľom odstrániť duplicitu, zjednodušiť kód a pridať flexibilitu bez zmeny fungovania kódu. 
-\item Párové programovanie - vývojári pracujú vedľa seba na jednom počítači, pričom neustále vyvíjajú a diskutujú o kóde toho druhého s cieľom zlepšiť kvalitu.
-\item Kolektívne vlastníctvo - každí člen tímu sa zoznámi s celým kódom projektu. Zástancovia XP a open source tvrdia, že čím viacej programátorov na kóde tým menej chýb
-\item Neustála integrácia -  urobiť z integrácie každodennú činnosť.Pri XP vývojári neustále integrujú a testujú po niekoľkých hodinách a integrujú jednu sadu zmien naraz. To zjednodušuje proces integrácie a je zrejmé kto je zodpovedný za opravu kódu ak integračné testy zlyhajú.
-\item 40 hodinový týždeň
-\item Zákazík je k dispozícii počas celého vývoja - zákazník je priamo na mieste a spolupracuje s tímom.
-\item Rovnaký kódovací štandard.\cite{1008537}
-\end{enumerate}
+\textbf{Praktiky Extremného programovania pozostávajú z:}
+Plánovacia hra,  Metafora XP,  Malé vydania, Jednoduchý dizajn, Testy jednotiek,  Refaktoring,  Párové programovanie, Kolektívne vlastníctvo,  Neustála integrácia, 40 hodinový týždeň, Zákazík priamo na mieste vývoja a Rovnaký kódovací štandard.\cite{1008537}\\
+
 
 \textit{„XP stavia na osvedčených postupoch, ako je testovanie jednotiek, párové programovanie a refaktoring. V XP sú tieto praktiky kombinované tak, že sa navzájom dopĺňajú a často kontrolujú\cite{10.5555/1076267}.“}\\
 
@@ -108,7 +86,7 @@ Vodopádový vývojový model je SDLC, ktorý bol po prvýkrát definovaný Wins
 
 Fázy vodopádového vývoja
 \begin{enumerate}
-\item Požiadavky - Urobí sa zápisu  klientových požiadaviek.
+\item Požiadavky - Urobí sa zápis  klientových požiadaviek.
 \item Špecifikácie - Vytvorí sa oficiálny dokument, v ktorom sú spísané dané požiadavky.
 \item Návrh -  Skladá sa z logického návrhu a fyzického návrhu.
 \item Implementácia - V tomto kroku sa začne aj ukončí tvorba kódu.
@@ -120,7 +98,7 @@ Fázy vodopádového vývoja
 
 Vodopádový model je jedným z najednoduchšich vývojových modelov, vďaka svojej štruktúre. Zároveň je to prvý Kladie sa v ňom veľký dôraz na vytvorenie detailnej dokumentácie klientvových požiadaviek, aby sa zistilo aké funkcie má program obsahovať. Vďaka tejto podrobnej dokumentácii bude manažment vedieť vyhradiť pre projekt potrebné financie a presne určiť čas, za ktorý by sa mal hotový produkt dostal ku klientovi. Vývojári vďaka dokumentácii presne vedia, ako má koncový produkt vyzerať a môžu začať pracovať na návrhu. V ktorom riešia aké algoritmy použiť, vedia nájsť rôzne chyby v kóde predtým, ako ho začnú implementovať, čím sa vyhnú zbytočnému prepisu kódu. Keď dokončia návrhovú fázu presúvajú sa na samotné písanie kódu a potom na testovanie, v ktorom sa preveruje či program funguje tak, ako má, aby ho mohli doručiť klientovi. Ak program funguje bez chýb dodá sa klientovi a už sa len počas používania produktu robí údržba, aby všetko fungovalo. Tu nám, ale pri tejto metóde vyskakuje problém, že ak pri testovacej fáze vybehne nejaká chyba musí sa prepísať celý program od začiatku, pretože vodopádový model sa ťažko prispôsobuje zmenám a neumožňuje sa vývojárom vracať k predošlej fáze, preto sa volá vodopádový, pretože jednotlivými fázami sa dá pohybovať len smerom z hora dole, a ak je jedna fáza ukončená nemôžeme sa k nej vrátiť. Ďalšou nevýhodou je, že po ukončení fázy, kde sa spisujú požiadavky sa s klientom už nekomunikuje, ale z môjho pohľadu je toto skôr nevýhoda pre samotného klienta nie pre vývojárov. Klient chce byť súčasťou procesu a vkladať nové funkcie do projektu, na to, ale vodopádový model nie je stavaný a tieto zmeny v požiadavkách by spôsobovali pravdepodobne veľké finančné, časové a pri najhoršom aj psychické problémy pre tím, ktorý by musel kód neustále prepisovať. Preto pri tom, aby sme vo svojom projekte mohli využiť efektívne vodopádový model musíme ho implementovať pri projektoch, ktoré majú nemeniace sa podmienky.
 
-\section{Iteračný a Inkrementálny vývoj}\label{iteratívny}
+\section{Špirálový vývoj}\label{spiral}
 \ldots
 \section{ RAD(Rapid aplication development)}\label{RAD}
 \ldots
