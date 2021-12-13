@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{url} 
 \usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
-
+\usepackage{float}
 \usepackage{cite}
 \usepackage{times}
 
@@ -102,13 +102,19 @@ Vodopádový model je jedným z najednoduchšich vývojových modelov, vďaka sv
 Špíralový vývoj bol vytvorený Barrym Boehom v roku 1988. Je to model navrhnutý na kontrolu risku a obsahuje najlepšie praktiky z vodopádového a prototypovaciehomodelu. Káždá iterácia sa vola špirála ktorej výsledokm je fungujúci softvér, ktorý je dodaný klientovi na kontrolu. na začiatku každej špirály sa robí návrh pomocou postupov používaných vo vodopádovej metóde.Každá cyklus pozostáva zo 4. etap\cite{}\\
 
 
-
-
-
+Špirálový model je vhodný pre veľké projekty s vysokým rizikom, kedže je to jediný model navrhnutý priamo na kontrolu rizika. narozdiel od vodopádového modelu je špirálový model flexibilný a zmeny sa vedia aplikovať po tom ako vývoj začal. Ďalšou výhodou je, že na začiatku každého cyklu je vytvorená dokumentácia vďaka, ktorej vie tým presne aké ďalšie funkcie a úpravy má tím pridať alebo vykonať. Výsledkom každého cyklu je fungujúci softvér, ktorý je dodaní klientovy, ktorý spíše nejaké nové zmeny. Aj napriek kombinácii najlepších praktík z dvoch vývojových metód, má aj táto metóda nevýhody. jedna z nevýhod sú vysoké náklady projektu, preto sa z tohoto hladiska špirálový vývoj nevhodný pre malé projekty s malým rizikom. Ďalšou veľkou nevýhodou je, že manažmen tnie je schopný určiť náklady a čas potrebný na skompletizovanie projektu, z dôvodu že počet jednotlivých fáz je neznámi a môže sa stáť že špirála bude neustále pokračovať. tento model sa zároveň považuje za jednu z najzložitejších  vývojových metód čiže v tíme treba mať skúsených developerov aby s vedeli v tomto procese orientovať, hlavne ak nepracujú na projekte od začiatku. taktiž je potrebné aby v tíme ktorý robí analýzu rizík boli experti kedže špirálový model je založený na analýze rizík.
 
 
 \section{ RAD(Rapid aplication development)}\label{RAD}
-\ldots
+RAD alebo rapid application development je metóda vivinutá na dodanie softvéru v čo najkratšom čase, pomocou iterativného prototypovania, spolupráce so zákazníkom a rôznich vývojových pomôcok, ako sú napríklad tvorca GUI(Graphical user interface) alebo DBMS(database management systems).\cite{}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale =0.6]{RAD_diagram.png}
+\caption{blablabla}
+\end{figure}
+ 
+Z tohto obrázku vieme povedať že RAD vývoj sa skladá z piatich fáz. V prvej fáze sú definované požiadavky, následne as prejde fázy kde sa začína vývoj softvéru, následne sa predvedie prototyp softvéru zákazníkovy ktorý dá vývojárom spetnú vezbu na základe ktorej budú softvér zdokonalovať. V 4-tej fáze sa testuje či všetky prvy softvéru fungujú ako celok a následne sa prejde do fazy vydania kde hotový softvér doručia klientovi. 
 \section{Porovnanie Jednotlivých metód medzi sebou}\label{porovnávanie}
 \ldots
 \section{Zhrnutie}\label{zaver}
